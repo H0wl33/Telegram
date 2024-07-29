@@ -88,26 +88,27 @@
         <button id="buy">Купить</button>
     </div>
     <form id="form">
+        <h1>Оформление покупки</h1>
         <input type="text" placeholder="Имя" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
         <input type="text" placeholder="Телефон" id="user_phone">
-        <button ID="order">Оформить</button>
+        <button id="order">Оформить</button>
     </form>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script>
-    let tg = window.Telegram.WebApp;
-    let buy = document.getElementbyId("buy");
-    let order = document.getElementbyId("order");
-
-    buy.addEventListener("click", ()=> {
-        document.getElementbyId("main").style.display = "none";
-        document.getElementbyId("form").style.display = "block";
-        document.getElementbyId("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name
-    });
-
-    order.addEventListener("click", ()=> {
-        tg.close();
-    });
-</script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let buy = document.getElementbyId("buy");
+        let order = document.getElementbyId("order");
+    
+        buy.addEventListener("click", ()=> {
+            document.getElementbyId("main").style.display = "none";
+            document.getElementbyId("form").style.display = "block";
+            document.getElementbyId("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name
+        });
+    
+        order.addEventListener("click", ()=> {
+            tg.close();
+        });
+    </script>
 </body>
 </html>
